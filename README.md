@@ -59,7 +59,7 @@ Psychologist Daniel Kahneman famously defined two modes of thought:
 - **System One**: Fast, instinctive, automatic, and reflexive.
 - **System Two**: Slow, deliberative, logical, and computationally expensive.
 
-Modern generative LLMs (GPT-4o, Claude 3.5 Sonnet, Gemini Pro) are **System Two** engines. Using them for perimeter security screening, ticket triage, and spam filtering is like hiring a chess grandmaster to check tickets at a subway turnstile:
+Modern generative LLMs (GPT-6 Sol, Claude Fable 5.1, Gemini Pro) are **System Two** engines. Using them for perimeter security screening, ticket triage, and spam filtering is like hiring a chess grandmaster to check tickets at a subway turnstile:
 
 | Metric | Traditional System Two (LLMs) | ReflexGate (TypeSafe Jev System One) | Factor Improvement |
 | :--- | :--- | :--- | :--- |
