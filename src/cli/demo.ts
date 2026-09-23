@@ -2,7 +2,7 @@ import { GuardrailGateway } from '../core/gateway.js';
 
 async function runDemo() {
   console.log('='.repeat(70));
-  console.log('🛡️  TypeSafe AI (Jev System One) - Intelligent Guardrail & Triage Gateway');
+  console.log('🛡️  ReflexGate (TypeSafe Jev System One) - Intelligent Guardrail & Triage Gateway');
   console.log('='.repeat(70));
   console.log('Target Model: jev-latest via https://api.typesafe.ai/v1/systemone');
   console.log('Mode: Parallel Speculative Multi-Evaluation (7 dimensions per call)\n');

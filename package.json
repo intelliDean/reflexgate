@@ -1,7 +1,7 @@
 {
-  "name": "typesafe-guardrail-gateway",
+  "name": "reflexgate",
   "version": "1.0.0",
-  "description": "Intelligent Real-Time API & Webhook Guardrail / Triage Gateway powered by TypeSafe AI System One (Jev)",
+  "description": "ReflexGate: Intelligent Real-Time API & Webhook Guardrail / Triage Gateway powered by TypeSafe AI System One (Jev)",
   "type": "module",
   "scripts": {
     "build": "tsc",

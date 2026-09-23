@@ -1,7 +1,7 @@
 services:
   gateway:
     build: .
-    container_name: typesafe-guardrail-gateway
+    container_name: reflexgate
     restart: unless-stopped
     ports:
       - "3000:3000"

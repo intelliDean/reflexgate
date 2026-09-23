@@ -1,4 +1,4 @@
-# TypeSafe AI Guardrail & Triage Gateway
+# ReflexGate — Intelligent Real-Time Guardrail & Triage Gateway
 
 An ultra-fast, production-grade API and webhook guardrail & triage gateway built with **TypeScript** and powered by **TypeSafe AI's flagship System One model (`Jev`)**.
 
