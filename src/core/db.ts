@@ -1,5 +1,5 @@
 import { DatabaseSync } from 'node:sqlite';
-import { AuditRepository, DecisionQueryFilters } from './db/repository.js';
+import { AuditRepository } from './db/repository.js';
 
 export * from './db/connection.js';
 export * from './db/mappers.js';

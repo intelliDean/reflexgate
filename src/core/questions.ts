@@ -1,5 +1,4 @@
 import { choice, score, noul } from '@typesafe-ai/sdk';
-import { Department } from './types.js';
 
 export const GATEWAY_QUESTIONS = {
   // Guardrail 1: Prompt Injection & Jailbreak Defense
