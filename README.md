@@ -1,4 +1,4 @@
-# ⚡ ReflexGate
+# ReflexGate
 
 <div align="center">
 
@@ -17,7 +17,7 @@
 
 ---
 
-## 📌 Executive Summary
+## Executive Summary
 
 Traditional LLM guardrails and triage gateways present a fatal trade-off in production pipelines: they are either **too slow** (waiting 1,500ms - 3,000ms for conversational autoregressive tokens), **too costly** ($0.50 – $3.00+ per million tokens across high-volume webhook queues), or **flaky** (hallucinated JSON outputs breaking deterministic routing code).
 
@@ -28,7 +28,7 @@ Incoming Webhook / API Payload
              │
              ▼
    ┌───────────────────┐
-   │ ⚡ ReflexGate Perim │
+   │  ReflexGate Perim │
    └─────────┬─────────┘
              │
              ├──► 1. Prompt Injection Risk  (Noul: 0.0 - 1.0)
@@ -53,7 +53,7 @@ Incoming Webhook / API Payload
 
 ---
 
-## 💡 The "System One" Paradigm
+## The "System One" Paradigm
 
 Psychologist Daniel Kahneman famously defined two modes of thought:
 - **System One**: Fast, instinctive, automatic, and reflexive.
@@ -71,9 +71,9 @@ Modern generative LLMs (GPT-6 Sol, Claude Fable 5.1, Gemini Pro) are **System Tw
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- **🛡️ 7-Dimension Speculative Multi-Evaluation in a Single Request**:
+- **7-Dimension Speculative Multi-Evaluation in a Single Request**:
   - `prompt_injection`: Intercepts system prompt overrides, jailbreaks, and indirect instructions.
   - `toxicity`: Catches abusive, harassing, or profanity-laden submissions.
   - `pii_leak`: Flags credit card numbers, SSNs, passwords, and private token leaks.
@@ -81,24 +81,24 @@ Modern generative LLMs (GPT-6 Sol, Claude Fable 5.1, Gemini Pro) are **System Tw
   - `severity`: Calibrates operational impact from `0 (Trivial)` to `3 (Critical/Outage)`.
   - `sentiment`: Detects churn vulnerability and user distress (`0: Positive` to `3: Furious/Churn Risk`).
   - `is_actionable`: Validates whether the message contains sufficient context to warrant automated action.
-- **⚖️ Deterministic Policy Router**:
+- **Deterministic Policy Router**:
   - Strict code-level enforcement. AI informs risk; code enforces business rules.
   - Generates clear action verdicts: `SECURITY_BLOCK`, `ESCALATE_CRITICAL`, `AUTO_DISPATCH`, and `HUMAN_REVIEW`.
-- **🎛️ Dynamic Policy Tuning**:
+- **Dynamic Policy Tuning**:
   - Adjust confidence gates, quarantine thresholds, and SLA alert triggers on the fly via REST API or interactive UI sliders. No server restart required.
-- **💾 Persistent Zero-Dependency SQLite Audit Store**:
+- **Persistent Zero-Dependency SQLite Audit Store**:
   - Leverages Node 22+ native `node:sqlite` (`DatabaseSync`) with WAL (Write-Ahead Logging) and prepared statements.
   - Full search, filter, and 1-click CSV export of historical decisions.
-- **📤 Outbound Webhook & Notification Dispatcher**:
+- **Outbound Webhook & Notification Dispatcher**:
   - Automatically formats and fans out payloads to Slack incoming webhooks, Discord embeds, custom downstream microservices, or the local built-in mock receiver.
-- **🖥️ Comprehensive Operations Dashboard**:
+- **Comprehensive Operations Dashboard**:
   - Interactive workbench with real-time payload testing, preset attack scenarios, live latency timers, policy tuning sliders, outbound dispatch monitor, and SQLite audit explorer.
-- **🐳 Enterprise Deployment Ready**:
+- **Enterprise Deployment Ready**:
   - Self-contained multi-stage `Dockerfile` and `docker-compose.yml` for turnkey container deployment.
 
 ---
 
-## 📐 Architecture
+## Architecture
 
 ```mermaid
 flowchart TD
@@ -141,7 +141,7 @@ flowchart TD
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Prerequisites
 - **Node.js**: `v22.0.0` or higher (tested on Node v26)
@@ -186,20 +186,20 @@ Visit **[http://localhost:3000](http://localhost:3000)** to open the ReflexGate 
 
 ---
 
-## 🖥️ Interactive Workbench & Dashboard
+## Interactive Workbench & Dashboard
 
 ReflexGate includes a sleek, dark-mode operations dashboard accessible at `http://localhost:3000`:
 
 | Tab | Capability |
 | :--- | :--- |
-| **⚡ Workbench** | Live sandbox to test custom payloads or select one-click presets (*Prompt Injection, Critical Outage, Routine Billing, Ambiguous*). Displays real-time API latency, confidence dials, guardrail violation badges, and verbatim raw JSON responses. |
-| **⚙️ Policy Rules** | Real-time policy configuration sliders. Tune injection thresholds, toxicity limits, PII sensitivity, auto-dispatch confidence minimums, and severity SLA escalation triggers without downtime. |
-| **📤 Outbound Feeds** | Real-time monitoring feed of all forwarded webhooks, Slack messages, Discord embeds, and downstream dispatches. Includes one-click test dispatch trigger. |
-| **📜 SQLite Audit Log** | High-performance search and filter interface for every evaluated payload. Filter by action (`SECURITY_BLOCK`, `AUTO_DISPATCH`, etc.) and department, inspect full payload records, and export audit trails to CSV. |
+| **Workbench** | Live sandbox to test custom payloads or select one-click presets (*Prompt Injection, Critical Outage, Routine Billing, Ambiguous*). Displays real-time API latency, confidence dials, guardrail violation badges, and verbatim raw JSON responses. |
+| **Policy Rules** | Real-time policy configuration sliders. Tune injection thresholds, toxicity limits, PII sensitivity, auto-dispatch confidence minimums, and severity SLA escalation triggers without downtime. |
+| **Outbound Feeds** | Real-time monitoring feed of all forwarded webhooks, Slack messages, Discord embeds, and downstream dispatches. Includes one-click test dispatch trigger. |
+| **SQLite Audit Log** | High-performance search and filter interface for every evaluated payload. Filter by action (`SECURITY_BLOCK`, `AUTO_DISPATCH`, etc.) and department, inspect full payload records, and export audit trails to CSV. |
 
 ---
 
-## 🔌 REST API Reference
+## REST API Reference
 
 ### 1. Evaluate Payload (Triage)
 ```http
@@ -289,7 +289,7 @@ GET /api/v1/history/export?format=csv
 
 ---
 
-## 🐳 Docker Deployment
+## Docker Deployment
 
 ReflexGate is fully containerized with persistent volume mapping for SQLite storage:
 
@@ -317,36 +317,64 @@ docker run -d \
 
 ---
 
-## 📂 Project Architecture
+## Project Architecture
 
 ```text
 reflexgate/
-├── public/                 # Operations dashboard (Vanilla CSS/JS, 4 tabs)
-│   └── index.html          # Real-time UI workbench, policy tuner, audit log
+├── public/                     # Operations dashboard
+│   ├── css/
+│   │   └── dashboard.css       # Design tokens, grid layouts, animations
+│   ├── js/
+│   │   ├── api.js              # REST client wrapper
+│   │   ├── app.js              # Master dashboard bootstrapper
+│   │   ├── audit.js            # SQLite audit log controller
+│   │   ├── dispatches.js       # Outbound feeds controller
+│   │   ├── policy.js           # Policy rules controller
+│   │   └── workbench.js        # Interactive sandbox controller
+│   └── index.html              # Clean semantic HTML skeleton (~320 lines)
 ├── src/
 │   ├── cli/
-│   │   └── demo.ts         # Terminal simulation with real-world scenarios
+│   │   └── demo.ts             # Terminal simulation with real-world scenarios
 │   ├── core/
-│   │   ├── config.ts       # Dynamic runtime policy manager
-│   │   ├── db.ts           # Native Node SQLite audit storage & CSV exporter
-│   │   ├── dispatcher.ts   # Outbound webhook & alert router (Slack/Discord)
-│   │   ├── evaluator.ts    # TypeSafe AI client with speculative fan-out
-│   │   ├── gateway.ts      # Main gateway facade coordinator
-│   │   ├── questions.ts    # 7 System One evaluation definitions
-│   │   ├── router.ts       # Deterministic policy engine
-│   │   └── types.ts        # TypeScript data contracts & schema definitions
+│   │   ├── config.ts           # Dynamic runtime policy manager
+│   │   ├── db/
+│   │   │   ├── connection.ts   # SQLite connection & schema migrations
+│   │   │   ├── csv.ts          # RFC-4180 CSV serializer
+│   │   │   ├── mappers.ts      # Type-safe row mappers
+│   │   │   └── repository.ts   # AuditRepository CRUD & query filters
+│   │   ├── dispatcher/
+│   │   │   ├── discord.ts      # Discord Rich Embed adapter
+│   │   │   ├── dispatcher.ts   # Main OutboundDispatcher
+│   │   │   ├── http.ts         # Resilient HTTP transport client
+│   │   │   ├── slack.ts        # Slack Block Kit adapter
+│   │   │   └── types.ts        # Dispatch contracts
+│   │   ├── evaluator/
+│   │   │   ├── evaluator.ts    # TypeSafe System One evaluator
+│   │   │   ├── parsers.ts      # Response normalization helpers
+│   │   │   └── types.ts        # ITypeSafeEvaluator interface
+│   │   ├── gateway.ts          # Gateway facade coordinator
+│   │   ├── policy/
+│   │   │   ├── engine.ts       # PolicyEngine rule evaluator
+│   │   │   ├── rules/          # Guardrail, CriticalSla, ConfidenceGate, AutoDispatch
+│   │   │   └── types.ts        # Policy types & contracts
+│   │   ├── questions.ts        # 7 System One evaluation definitions
+│   │   ├── router.ts           # Deterministic policy router facade
+│   │   └── types.ts            # Core TypeScript data contracts
 │   └── server/
-│       └── server.ts       # Production Express REST & webhook server
-├── Dockerfile              # Multi-stage production container build
-├── docker-compose.yml      # Orchestration with persistent volume mounts
-├── package.json            # Node.js ESM configuration
-├── tsconfig.json           # Strict TypeScript compiler options
-└── README.md               # Architecture, benchmarks, and API documentation
+│       ├── app.ts              # Express application factory
+│       ├── constants.ts        # Presets and server constants
+│       ├── routes/             # triage, audit, config, dispatches controllers
+│       └── server.ts           # Minimal server entrypoint
+├── Dockerfile                  # Multi-stage production container build
+├── docker-compose.yml          # Orchestration with persistent volume mounts
+├── package.json                # Node.js ESM configuration
+├── tsconfig.json               # Strict TypeScript compiler options
+└── README.md                   # Architecture, benchmarks, and API documentation
 ```
 
 ---
 
-## 🔒 Security & Privacy Guarantees
+## Security & Privacy Guarantees
 
 1. **Zero Secret Retention in Evaluator**: ReflexGate evaluates payloads statelessly using TypeSafe AI's Jev model. No customer payloads are used for model training.
 2. **Deterministic Hard Stops**: AI models *never* make autonomous execution decisions. System One outputs structured probabilities; strict TypeScript code enforces quarantine, escalation, and routing.
@@ -354,6 +382,6 @@ reflexgate/
 
 ---
 
-## 📄 License
+## License
 
 ReflexGate is open-source software licensed under the [MIT License](LICENSE).
